@@ -1,4 +1,5 @@
-# Week-6-assignment
+# Week 6 assignment
+
 Set Up the Project Environment
 
 Initialize a new Vite project with the React template.
