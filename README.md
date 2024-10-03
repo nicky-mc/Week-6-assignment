@@ -13,3 +13,4 @@ Follow-Up Steps
 
 Integrate state management to handle the game state.
 Add styles and additional features like upgrades or achievements.
+![Screenshot 2024-10-03 at 17 09 20](https://github.com/user-attachments/assets/651f7123-7549-4c9b-8fa6-4d8c623d5065)
