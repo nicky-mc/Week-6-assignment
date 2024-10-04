@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "extra damage",
+    "cost": 100,
+    "increase": 1
+  },
+  {
+    "id": 2,
+    "name": "masterwork sword",
+    "cost": 500,
+    "increase": 5
+  },
+  {
+    "id": 3,
+    "name": "Sharper Blade",
+    "cost": 1000,
+    "increase": 10
+  },
+  {
+    "id": 4,
+    "name": "lvl 1 magic sword",
+    "cost": 2000,
+    "increase": 20
+  },
+  {
+    "id": 5,
+    "name": "Smite Evil enhancement",
+    "cost": 5000,
+    "increase": 50
+  },
+  {
+    "id": 6,
+    "name": "Sword of minor smiting",
+    "cost": 10000,
+    "increase": 100
+  },
+  {
+    "id": 7,
+    "name": "lvl 2 magic sword",
+    "cost": 20000,
+    "increase": 200
+  },
+  {
+    "id": 8,
+    "name": "Blessed Blade",
+    "cost": 50000,
+    "increase": 500
+  },
+  {
+    "id": 9,
+    "name": "Sword of Major Smiting",
+    "cost": 100000,
+    "increase": 1000
+  },
+  {
+    "id": 10,
+    "name": "Sword of Evil go bye bye lvl 10",
+    "cost": 200000,
+    "increase": 2000
+  }
+]
