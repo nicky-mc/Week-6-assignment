@@ -13,16 +13,7 @@ Follow-Up Steps
 
 Integrate state management to handle the game state.
 Add styles and additional features like upgrades or achievements.
-
-
-
-
-
 ![Screenshot 2024-10-04 at 13 49 31](https://github.com/user-attachments/assets/9f67e605-26a1-433a-a658-67f025d4a547)
-
-
-
-
 
 Week 6 Assignment: Build a Cookie Clicker using React
 Overview
