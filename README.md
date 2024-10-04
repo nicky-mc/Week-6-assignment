@@ -13,7 +13,17 @@ Follow-Up Steps
 
 Integrate state management to handle the game state.
 Add styles and additional features like upgrades or achievements.
-![Screenshot 2024-10-03 at 17 09 20](https://github.com/user-attachments/assets/651f7123-7549-4c9b-8fa6-4d8c623d5065)
+
+
+
+
+
+![Screenshot 2024-10-04 at 13 49 31](https://github.com/user-attachments/assets/9f67e605-26a1-433a-a658-67f025d4a547)
+
+
+
+
+
 Week 6 Assignment: Build a Cookie Clicker using React
 Overview
 It's time for some more cookies. The Cookie Clicker game from previous weeks as a React application. It's useful to build the same application in the new paradigm so you can draw direct comparisons and see how the new approach is different from the old one.
