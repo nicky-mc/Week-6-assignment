@@ -1,0 +1,66 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Component-specific styles */
+.button {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.counter {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.upgrade-shop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.upgrade {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.upgrade img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,40 @@
+.upgrade {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  background-color: #f5deb3;
+  cursor: pointer;
+  transition: transform 0.1s;
+  width: 200px;
+}
+
+.upgrade:hover {
+  transform: scale(1.05);
+}
+
+.canAfford {
+  opacity: 1;
+}
+
+.cannotAfford {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.cost,
+.increase,
+.count {
+  font-size: 0.8em;
+  color: #4a4a4a;
+}

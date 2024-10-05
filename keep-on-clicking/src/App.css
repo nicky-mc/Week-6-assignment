@@ -1,0 +1,27 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.title {
+  text-align: center;
+  color: #8b4513;
+}
+
+.dps {
+  text-align: center;
+  font-weight: bold;
+}

@@ -3,60 +3,70 @@
     "id": 1,
     "name": "extra damage",
     "cost": 100,
-    "increase": 1
+    "increase": 1,
+    "image": "/assets/images/ExtraDamage.jpeg"
   },
   {
     "id": 2,
     "name": "masterwork sword",
     "cost": 500,
-    "increase": 5
+    "increase": 5,
+    "image": "/assets/images/MasterworkSword.jpeg"
   },
   {
     "id": 3,
     "name": "Sharper Blade",
     "cost": 1000,
-    "increase": 10
+    "increase": 10,
+    "image": "/assets/images/SharperBlade.jpeg"
   },
   {
     "id": 4,
     "name": "lvl 1 magic sword",
     "cost": 2000,
-    "increase": 20
+    "increase": 20,
+    "image": "/assets/images/Lvl1MagicSword.jpeg"
   },
   {
     "id": 5,
     "name": "Smite Evil enhancement",
     "cost": 5000,
-    "increase": 50
+    "increase": 50,
+    "image": "/assets/images/SmiteEvilEnhancement.jpeg"
   },
   {
     "id": 6,
     "name": "Sword of minor smiting",
     "cost": 10000,
-    "increase": 100
+    "increase": 100,
+    "image": "/assets/images/SwordofMinorSmiting.jpeg"
   },
   {
     "id": 7,
     "name": "lvl 2 magic sword",
     "cost": 20000,
-    "increase": 200
+    "increase": 200,
+    "image": "/assets/images/Lvl2MagicSword.jpeg"
   },
   {
     "id": 8,
     "name": "Blessed Blade",
     "cost": 50000,
-    "increase": 500
+    "increase": 500,
+    "image": "/assets/images/BlessedBlade.jpeg"
   },
   {
     "id": 9,
     "name": "Sword of Major Smiting",
     "cost": 100000,
-    "increase": 1000
+    "increase": 1000,
+    "image": "/assets/images/SwordofMajorSmiting.jpeg"
   },
   {
     "id": 10,
     "name": "Sword of Evil go bye bye lvl 10",
     "cost": 200000,
-    "increase": 2000
+    "increase": 2000,
+    "image": "/assets/images/SwordofEvilGoByeByeLvl10.jpeg"
   }
 ]
