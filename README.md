@@ -9,41 +9,8 @@ Integrate state management to handle the game state.
 Add styles and additional features like upgrades or achievements
 
 
-proposed file structure
 
-.clicking-game/
-├── public/
-│   ├── assets/
-│   │   ├── audio/
-│   │   │   └── background-music.mp3
-│   │   └── images/
-│   │       ├── click-button.gif
-│   │       ├── cursor.gif
-│   │       ├── extra-damage.png
-│   │       ├── masterwork-sword.png
-│   │       └── your-animated-background.gif
-├── src/
-│   ├── components/
-│   │   ├── DPS.jsx
-│   │   ├── Upgrades.jsx
-│   │   ├── Upgrade.jsx
-│   │   ├── Button.jsx
-│   │   ├── Scoreboard.jsx
-│   │   ├── NameEntry.jsx
-│   │   ├── AnimatedBackground.jsx
-│   │   ├── BackgroundMusic.jsx
-│   │   ├── App.css
-│   │   ├── Button.css
-│   │   ├── NameEntry.css
-│   │   ├── Scoreboard.css
-│   │   ├── Upgrade.css
-│   │   ├── Upgrades.css
-│   │   └── DPS.css
-│   ├── App.jsx
-│   ├── Main.jsx
-│   ├── Upgrade.json
-│   └── index.html
-└── package.json
+
 
 
 Week 6 Assignment: Build a Cookie Clicker using React
@@ -79,49 +46,55 @@ User Stories
 🐿️ As a developer, I want to use the .map() function to render lists of items efficiently so that the user can see dynamic content without performance issues.
 🐿️ As a user, I want to purchase upgrades with my earned cookies to increase my cookies per second, making the game play more rewarding.
 Requirements
-🎯 Implement the useState hook.
-🎯 Use useEffect effectively.
-🎯 Return JSX from a source other than App.jsx, for example, by using components.
-🎯 Apply setInterval to execute periodic tasks within the application.
-🎯 Use the .map() function to render lists of items in the application dynamically.
-🎯 Use logic to manage the purchase and application of upgrade items within the game.
-How to Deploy
-Aim to deploy on Render when you have enough time afterwards to debug any potential problems, which will be listed in the production logs.
+🎯 Implement the useState hook. ✅
+🎯 Use useEffect effectively. ✅
+🎯 Return JSX from a source other than App.jsx, for example, by using components.✅
+🎯 Apply setInterval to execute periodic tasks within the application.✅
+🎯 Use the .map() function to render lists of items in the application dynamically.✅
+🎯 Use logic to manage the purchase and application of upgrade items within the game.✅
 
-To begin, ensure your project has been pushed to GitHub. Then, go to Render. You should already have an account at this point, but if not, make an account (or sign-in through GitHub).
 
-Deploying a React App to Render
-Click ‘+ New’ and choose ‘Static Site’.
-Select the same project and click ‘Connect →’.
-Here is what we need on the options page:
-Build Command: npm install && npm run build (or npm install; npm run build, as should be pre-filled in for you)
-Publish directory: dist
-Environment variables: add anything in your client-side .env file in here.
-Now, you can ‘Deploy Static Site’!
-Stretch Goals
-To achieve an 8/8 in your assignment, aim to achieve all of the requirements, plus some extra goals for each section of the marking rubric. This can be excellence in styling or something that demonstrates creativity or innovation in the week’s topics.
 
-Below are some examples of stretch goals and user stories that you could add to your project, but are not expected to.
+
 
 Stretch User Stories
-🐿️ As a user, I want the application to save and retrieve my game data so that my progress is preserved even when I close and reopen the game.
-🐿️ As a developer, I want the application to use an API to retrieve upgrade information so that users can access current upgrade details and seamlessly integrate them into their game play.
+🐿️ As a user, I want the application to save and retrieve my game data so that my progress is preserved even when I close and reopen the game.✅
+🐿️ As a developer, I want the application to use an API to retrieve upgrade information so that users can access current upgrade details and seamlessly integrate them into their game play.✅
 🐿️ As a user, I want the application to have excellent UI styling so that it is visually appealing and provides a pleasant and intuitive experience while playing the game.
 Stretch Requirements
-🏹 Use local storage to save and retrieve game data.
-🏹 Use the Upgrades API to manage upgrades.
-🏹 Style the application excellently.
+🏹 Use local storage to save and retrieve game data.✅
+🏹 Use the Upgrades API to manage upgrades.✅
+🏹 Style the application excellently.✅
 Reflection
 Please also provide an assignment reflection in your project README.md file.
 
 Required
-🎯 What requirements did you achieve?
-🎯 Were there any requirements or goals that you were unable to achieve?
-🎯 If so, what was it that you found difficult about these tasks?
+🎯 What requirements did you achieve?  i believe i mananged to hit all requirements
+and stretch goals. 
+🎯 Were there any requirements or goals that you were unable to achieve? none of thw stretch or
+required ones. i had a hard time implementing the background music
+🎯 If so, what was it that you found difficult about these tasks? chrome by default prevents autosy as does many browsers ive achieved this 
+before previously but couldnt figure it out this time
 Optional
 🏹 Feel free to add any other reflections you would like to share about your submission, for example:
 
 Requesting feedback about a specific part of your submission.
+
+id like to knkw wjat i could have done to implement the music bwtter 
 What useful external sources helped you complete the assignment (e.g YouTube tutorials)?
+BroCode codecademy,  mimo, w3 schools, DEV, GeeksforGeeks, various YouTube videos.
 What errors or bugs did you encounter while completing your assignment? How did you solve them?
+i managed to come across a few but it was mostly to do with my extensions ftom my compnets  not correctly laid out
+as well as habign my index in src when it needed to en in root.
+
 What went really well and what could have gone better?
+researchjng the components went really well. my biggest issue was 
+my initial file structure once i fixed this it fell into place. i experiemnted with a
+few components one called accordian stands out. it was to attempt to make the score board and name entry easier to 
+see on mobile. 
+if i had more time I'd investigate thjs snd the music and implement their use. i also 
+woyld add noise to the button clicks. 
+
+it was fun to implement my design witb React amd i look forward to
+whst comes next. 
+https://week-6-assignment-rho.vercel.app/
