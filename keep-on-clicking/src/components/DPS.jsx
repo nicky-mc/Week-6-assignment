@@ -1,6 +1,6 @@
 import "react";
 import PropTypes from "prop-types";
-import "./DPS.CSS";
+import "./DPS.css";
 
 const DPS = ({ dps, clickCount, totalDamage }) => {
   return (
