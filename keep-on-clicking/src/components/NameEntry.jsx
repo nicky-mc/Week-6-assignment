@@ -1,21 +1,32 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import "./NameEntry.css";
 
-export default function NameEntry({ onNameSubmit }) {
-  const [name, setName] = useState("");
+const NameEntry = ({ onNameSubmit }) => {
+  const [inputName, setInputName] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onNameSubmit(name);
+    if (inputName.trim()) {
+      onNameSubmit(inputName);
+    }
   };
+
   return (
-    <form className="name-entry" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="name-entry">
       <input
         type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={inputName}
+        onChange={(e) => setInputName(e.target.value)}
         placeholder="Enter your name"
       />
       <button type="submit">Submit</button>
     </form>
   );
-}
+};
+
+NameEntry.propTypes = {
+  onNameSubmit: PropTypes.func.isRequired,
+};
+
+export default NameEntry;

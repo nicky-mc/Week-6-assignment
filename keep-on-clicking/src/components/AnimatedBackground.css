@@ -1,25 +1,8 @@
 .animated-background {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  background-image: url("/assets/images/IMG_3473.GIF");
-  background-size: cover;
-  background-position: center;
-  animation: pulse 5s infinite;
-}
-.overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.05);
-  }
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

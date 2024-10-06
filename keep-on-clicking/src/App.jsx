@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import Scoreboard from "./components/Scoreboard";
 import NameEntry from "./components/NameEntry";
 import Button from "./components/Button";
@@ -6,35 +6,44 @@ import Upgrades from "./components/Upgrades";
 import DPS from "./components/DPS";
 import AnimatedBackground from "./components/AnimatedBackground";
 import BackgroundMusic from "./components/BackgroundMusic";
-import "./App.css"; // Main CSS for the application
+import "./App.css";
 
 const App = () => {
-  const [name, setName] = useState(""); // State for player's name
-  const [score, setScore] = useState(0); // State for player's score
-  const [dps, setDps] = useState(0); // State for damage per second
+  const [name, setName] = useState("");
+  const [score, setScore] = useState(0);
+  const [dps, setDps] = useState(0);
 
-  // Function to update the player's name
-  const handleNameSubmit = (name) => {
+  const handleNameSubmit = useCallback((name) => {
     setName(name);
-  };
+  }, []);
 
-  // Function to update the player's score
-  const handleScoreUpdate = (newScore) => {
+  const handleScoreUpdate = useCallback((newScore) => {
     setScore(newScore);
-  };
+  }, []);
 
-  return (
-    <div className="app">
-      <BackgroundMusic />
-      <AnimatedBackground />
-      <Scoreboard score={score} name={name} />
-      <NameEntry onNameSubmit={handleNameSubmit} />
-      <Button onClick={() => handleScoreUpdate(score + 1)} />
+  const handleButtonClick = useCallback(() => {
+    setScore((prevScore) => prevScore + 1);
+  }, []);
+
+  const memoizedUpgrades = useMemo(
+    () => (
       <Upgrades
         score={score}
         onScoreUpdate={handleScoreUpdate}
         setDps={setDps}
       />
+    ),
+    [score, handleScoreUpdate, setDps]
+  );
+
+  return (
+    <div className="app">
+      <AnimatedBackground clickCount={score} />
+      <BackgroundMusic />
+      <Scoreboard score={score} name={name} />
+      <NameEntry onNameSubmit={handleNameSubmit} />
+      <Button onClick={handleButtonClick} />
+      {memoizedUpgrades}
       <DPS dps={dps} />
     </div>
   );

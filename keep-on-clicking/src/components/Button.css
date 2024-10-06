@@ -1,12 +1,23 @@
 .click-button {
+  position: relative;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 40px;
+  font-size: 24px;
+  background-color: transparent;
+  color: white;
   border: none;
-  background-color: none;
-  padding: 0;
+  border-radius: 5px;
+  cursor: url("/assets/images/Sword.gif"), auto;
+  z-index: 10;
+  align-items: center;
+}
+.click-button:active {
+  cursor: url("/assets/images/Sword.gif");
 }
 .click-button img {
-  width: 100px;
-  height: auto;
-}
-.click-button:hover {
-  cursor: pointer url("/assets/images/SwordCusor.gif"), auto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }

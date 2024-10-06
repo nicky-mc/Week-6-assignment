@@ -1,45 +1,74 @@
-import { useState, useEffect } from "react";
-import Upgrade from "./Upgrade.jsx";
-import upgradesData from "../Upgrade.json"; // Import upgrade data
-import "./Upgrades.css"; // Import CSS for Upgrades
+import { useState, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
+import Upgrade from "./Upgrade";
+import upgradesData from "../Upgrades.json";
+import "./Upgrades.css";
 
 const Upgrades = ({ score, onScoreUpdate, setDps }) => {
-  const [upgrades, setUpgrades] = useState([]); // State for storing upgrades
+  const [upgrades, setUpgrades] = useState(
+    upgradesData.map((upgrade) => ({ ...upgrade, count: 0 }))
+  );
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const calculateTotalDps = useCallback(() => {
+    return upgrades.reduce(
+      (total, upgrade) => total + upgrade.increase * upgrade.count,
+      0
+    );
+  }, [upgrades]);
 
   useEffect(() => {
-    // Load upgrades from JSON file when component mounts
-    setUpgrades(upgradesData);
-  }, []);
+    setDps(calculateTotalDps());
+  }, [upgrades, setDps, calculateTotalDps]);
 
-  // Function to handle the purchase of upgrades
-  const purchaseUpgrade = (id) => {
-    setUpgrades((prevUpgrades) =>
-      prevUpgrades.map((upgrade) => {
-        if (upgrade.id === id && score >= upgrade.cost && !upgrade.purchased) {
-          const newDps = upgrade.increase;
-          setDps((prevDps) => prevDps + newDps); // Update DPS based on upgrade
-          return { ...upgrade, purchased: true }; // Mark the upgrade as purchased
-        }
-        return upgrade;
-      })
-    );
+  const handleUpgrade = useCallback(
+    (upgradeId) => {
+      setUpgrades((prevUpgrades) =>
+        prevUpgrades.map((upgrade) =>
+          upgrade.id === upgradeId
+            ? {
+                ...upgrade,
+                count: upgrade.count + 1,
+                cost: Math.ceil(upgrade.cost * 1.15),
+              }
+            : upgrade
+        )
+      );
+      const upgradeCost = upgrades.find((u) => u.id === upgradeId).cost;
+      onScoreUpdate(score - upgradeCost);
+    },
+    [score, onScoreUpdate, upgrades]
+  );
 
-    const upgradeCost = upgrades.find((upgrade) => upgrade.id === id).cost; // Get the cost of the upgrade
-    onScoreUpdate(score - upgradeCost); // Update the score in the parent component
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
   return (
-    <div className="upgrades">
-      {upgrades.map((upgrade) => (
-        <Upgrade
-          key={upgrade.id}
-          upgrade={upgrade}
-          purchaseUpgrade={purchaseUpgrade}
-          score={score}
-        />
-      ))}
+    <div className={`upgrades ${isExpanded ? "expanded" : "collapsed"}`}>
+      <button onClick={toggleExpand} className="toggle-button">
+        {isExpanded ? "Hide Upgrades" : "Show Upgrades"}
+      </button>
+      {isExpanded && (
+        <div className="upgrades-grid">
+          {upgrades.map((upgrade) => (
+            <Upgrade
+              key={upgrade.id}
+              upgrade={upgrade}
+              onUpgrade={handleUpgrade}
+              canAfford={score >= upgrade.cost}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
+};
+
+Upgrades.propTypes = {
+  score: PropTypes.number.isRequired,
+  onScoreUpdate: PropTypes.func.isRequired,
+  setDps: PropTypes.func.isRequired,
 };
 
 export default Upgrades;
