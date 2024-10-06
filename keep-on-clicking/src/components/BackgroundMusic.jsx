@@ -22,7 +22,7 @@ const BackgroundMusic = ({ src, isPlaying }) => {
     }
   }, [isPlaying]);
 
-  return <audio ref={audioRef} src={src} loop />;
+  return <audio ref={audioRef} src={src} loop muted={!isPlaying} />;  // Start muted if not playing
 };
 
 export default BackgroundMusic;
