@@ -1,52 +1,45 @@
 import { useState } from "react";
-import ClickButton from "./components/ClickButton";
-import DamageCounter from "./components/DamageCounter";
-import UpgradeShop from "./components/UpgradeShop";
-import PlayerNameInput from "./components/PlayerNameInput"; // New Component
-import ResetButton from "./components/ResetButton"; // New Component
-import BackgroundMusic from "./components/BackgroundMusic"; // New Component
+import ScoreBoard from "../src/components/Scoreboard.jsx";
+import Button from "../src/components/Button.jsx";
+import NameEntry from "../src/components/NameEntry.jsx";
+import Upgrades from "../src/components/Upgrades.jsx";
+import DPS from "../src/components/DPS.jsx";
+import AnimatedBackground from "../src/components/AnimatedBackground.jsx";
+import BackgroundMusic from "../src/components/BackgroundMusic.jsx";
 import "./App.css";
 
-function App() {
-  const [money, setMoney] = useState(0);
-  const [damage, setDamage] = useState(1);
-  const [playerName, setPlayerName] = useState("");
-
-  const handleClick = () => {
-    setMoney((prevMoney) => prevMoney + damage);
+export default function App() {
+  const [name, setName] = useState(""); // State to store the player's name
+  const [score, setScore] = useState(0);
+  // State to store the player's score
+  const [dps, setDps] = useState(0); // State to store the player's DPS
+  const handleSubmit = (name) => {
+    setName(name);
   };
-
-  const handleUpgradeClick = (upgrade) => {
-    if (money >= upgrade.cost) {
-      setMoney((prevMoney) => prevMoney - upgrade.cost);
-      setDamage((prevDamage) => prevDamage + upgrade.increase);
-    }
+  const handleScoreUpdate = (newScore) => {
+    setScore(newScore);
   };
-
-  const handleNameChange = (event) => {
-    setPlayerName(event.target.value);
-  };
-
-  const resetGame = () => {
-    setMoney(0);
-    setDamage(1);
-  };
-
   return (
-    <div className="App">
-      <BackgroundMusic />
-      <h1>Monster Smasher</h1>
-      <PlayerNameInput
-        playerName={playerName}
-        onNameChange={handleNameChange}
-      />
-      <DamageCounter damage={damage} />
-      <p>Money: {money}</p>
-      <ClickButton onClick={handleClick} />
-      <UpgradeShop onUpgradeClick={handleUpgradeClick} currentMoney={money} />
-      <ResetButton onReset={resetGame} />
-    </div>
+    <>
+      <div className="title">
+        <header>
+          <h1>Keep on Clicking!</h1>
+        </header>
+      </div>
+
+      <div className="app">
+        <BackgroundMusic />
+        <AnimatedBackground />
+        <ScoreBoard score={score} name={name} />
+        <NameEntry onNameSubmit={handleSubmit} />
+        <Button onClick={() => handleScoreUpdate(score + 1)} />
+        <Upgrades
+          score={score}
+          onScoreUpdate={handleScoreUpdate}
+          setDps={setDps}
+        />
+        <DPS dps={dps} />
+      </div>
+    </>
   );
 }
-
-export default App;

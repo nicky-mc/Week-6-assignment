@@ -1,0 +1,12 @@
+.click-button {
+  border: none;
+  background-color: none;
+  padding: 0;
+}
+.click-button img {
+  width: 100px;
+  height: auto;
+}
+.click-button:hover {
+  cursor: pointer url("/assets/images/SwordCusor.gif"), auto;
+}

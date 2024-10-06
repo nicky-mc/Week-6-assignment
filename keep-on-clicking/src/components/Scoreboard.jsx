@@ -1,15 +1,14 @@
-import styles from "./Scoreboard.css";
+import "react";
+import "./Scoreboard.css";
 
-const Scoreboard = ({ playerName, score }) => {
+export default function ScoreBoard({ score, name }) {
   return (
-    <div className={styles.scoreboard}>
-      <h3 className={styles.title}>Scoreboard</h3>
-      <div className={styles.entry}>
-        <span className={styles.name}>{playerName || "Player"}</span>
-        <span className={styles.score}>{score}</span>
-      </div>
+    <div className="scoreboard">
+      <h2>
+        {name ? `${name}'s Score:` : "Score,"}
+        {score}{" "}
+      </h2>
+      <h2>High Score: 0</h2>
     </div>
   );
-};
-
-export default Scoreboard;
+}
