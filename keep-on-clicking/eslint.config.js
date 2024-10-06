@@ -10,14 +10,20 @@ export default [
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      sourceType: "module",
       parserOptions: {
-        ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
-        sourceType: "module",
+      },
+      globals: {
+        ...globals.browser,
+        React: "readonly", // Add this line to define React globally
       },
     },
-    settings: { react: { version: "18.3" } },
+    settings: {
+      react: {
+        version: "detect", // Changed to "detect" to automatically detect React version
+      },
+    },
     plugins: {
       react,
       "react-hooks": reactHooks,
@@ -28,6 +34,7 @@ export default [
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
+      "react/react-in-jsx-scope": "off", // Add this line to turn off the React import requirement
       "react/prop-types": "off",
       "react/jsx-no-target-blank": "off",
       "react/display-name": "off",
