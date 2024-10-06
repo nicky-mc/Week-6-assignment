@@ -13,7 +13,7 @@ const App = () => {
   const [score, setScore] = useState({ clicks: 0, dps: 0, totalDamage: 0 });
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [scores, setScores] = useState([]);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);  // Initialize to false
 
   const handleClick = () => {
     setScore((prevScore) => ({
@@ -66,7 +66,7 @@ const App = () => {
       <AnimatedBackground />
       <BackgroundMusic
         src="/assets/audio/CHIPTUNE_Minstrel_Dance(chaosic.com).mp3"
-        isPlaying={isMusicPlaying}
+        isPlaying={isMusicPlaying}  // Pass the state
       />
       <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <div className="reset-button-container">
