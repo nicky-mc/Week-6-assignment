@@ -6,8 +6,45 @@ Initialize a new Vite project with the React template.
 Install necessary dependencies like React, ReactDOM, and other required packages.
 Create the Game Components
 Integrate state management to handle the game state.
-Add styles and additional features like upgrades or achievements.
-![Screenshot 2024-10-04 at 13 49 31](https://github.com/user-attachments/assets/9f67e605-26a1-433a-a658-67f025d4a547)
+Add styles and additional features like upgrades or achievements
+
+
+proposed file structure
+
+.clicking-game/
+├── public/
+│   ├── assets/
+│   │   ├── audio/
+│   │   │   └── background-music.mp3
+│   │   └── images/
+│   │       ├── click-button.gif
+│   │       ├── cursor.gif
+│   │       ├── extra-damage.png
+│   │       ├── masterwork-sword.png
+│   │       └── your-animated-background.gif
+├── src/
+│   ├── components/
+│   │   ├── DPS.jsx
+│   │   ├── Upgrades.jsx
+│   │   ├── Upgrade.jsx
+│   │   ├── Button.jsx
+│   │   ├── Scoreboard.jsx
+│   │   ├── NameEntry.jsx
+│   │   ├── AnimatedBackground.jsx
+│   │   ├── BackgroundMusic.jsx
+│   │   ├── App.css
+│   │   ├── Button.css
+│   │   ├── NameEntry.css
+│   │   ├── Scoreboard.css
+│   │   ├── Upgrade.css
+│   │   ├── Upgrades.css
+│   │   └── DPS.css
+│   ├── App.jsx
+│   ├── Main.jsx
+│   ├── Upgrade.json
+│   └── index.html
+└── package.json
+
 
 Week 6 Assignment: Build a Cookie Clicker using React
 Overview
