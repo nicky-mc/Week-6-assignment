@@ -1,5 +1,5 @@
 import "react";
-import "./AnitmatedBackground.css";
+import "./AnimatedBackground.css";
 
 const AnimatedBackground = () => {
   return (

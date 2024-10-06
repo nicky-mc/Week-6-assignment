@@ -1,8 +1,8 @@
-.animated-backgrount {
+.animated-background {
   position: relative;
   width: 100%;
   height: 400px;
-  background-image: url("/asets/images/IMG_3473.GIF");
+  background-image: url("/assets/images/IMG_3473.GIF");
   background-size: cover;
   background-position: center;
   animation: pulse 5s infinite;
