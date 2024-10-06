@@ -1,0 +1,13 @@
+.upgrade {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+}
+.upgrade-image {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
