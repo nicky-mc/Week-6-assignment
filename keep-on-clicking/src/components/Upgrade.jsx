@@ -8,9 +8,8 @@ const Upgrade = ({ upgrade, onUpgrade, canAfford }) => {
       <img src={upgrade.image} alt={upgrade.name} className="upgrade-image" />
       <h3>{upgrade.name}</h3>
       <p>Cost: {upgrade.cost}</p>
-      <p>Increase: {upgrade.increase} DPS</p>
-      <p>Owned: {upgrade.count}</p>
-      <button onClick={() => onUpgrade(upgrade.id)} disabled={!canAfford}>
+      <p>DPS Increase: {upgrade.increase}</p>
+      <button onClick={onUpgrade} disabled={!canAfford}>
         Buy
       </button>
     </div>
@@ -24,7 +23,6 @@ Upgrade.propTypes = {
     cost: PropTypes.number.isRequired,
     increase: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired,
   }).isRequired,
   onUpgrade: PropTypes.func.isRequired,
   canAfford: PropTypes.bool.isRequired,

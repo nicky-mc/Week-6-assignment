@@ -1,23 +1,19 @@
-.click-button {
-  position: relative;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 20px 40px;
-  font-size: 24px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: url("/assets/images/Sword.gif"), auto;
-  z-index: 10;
+/* src/components/Button.css */
+.button-container {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  height: 50vh; /* This will center the button vertically in the top half of the screen */
 }
-.click-button:active {
-  cursor: url("/assets/images/Sword.gif");
+
+.click-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
+
 .click-button img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+  width: 450px;
+  height: auto;
 }

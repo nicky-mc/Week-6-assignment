@@ -1,9 +1,142 @@
-.app {
-  position: relative;
-  min-height: 100vh;
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-toggle:hover {
+  background-color: #45a049;
+}
+.light-mode {
+  background-color: transparent;
+  color: #f7e9e9;
+}
+
+.dark-mode {
+  background-color: translucent;
+  color: #ffffff;
+}
+
+.App {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 60px; /* Avoid overlapping with the reset button */
+}
+
+.upper-section {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.center-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-content {
+  flex: 0 0 25%; /* Adjust this value as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.lower-section {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.reset-button-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff4136;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #ff725c;
+}
+
+.click-count {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .game-container {
+    padding-top: 80px; /* Increase top padding to avoid overlapping with reset button */
+  }
+
+  .upper-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .side-content {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .center-content {
+    order: -1; /* Move the center content (Click Button) to the top on mobile */
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .lower-section {
+    height: auto;
+    max-height: 300px;
+  }
+
+  /* Ensure the click button is visible and centered */
+  .center-content button {
+    transform: scale(
+      0.8
+    ); /* Slightly reduce the size of the button on mobile */
+    margin: 0 auto; /* Center the button horizontally */
+  }
 }

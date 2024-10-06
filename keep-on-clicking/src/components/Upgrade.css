@@ -1,41 +1,46 @@
 .upgrade {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #040404;
   text-align: center;
-  color: black;
 }
 
 .upgrade-image {
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .upgrade h3 {
-  font-size: 14px;
-  margin: 5px 0;
+  margin: 0 0 5px 0;
+  font-size: 16px;
 }
 
 .upgrade p {
-  font-size: 12px;
   margin: 2px 0;
+  font-size: 14px;
 }
 
 .upgrade button {
-  background-color: #4caf50;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #181a18;
   color: white;
   border: none;
-  padding: 5px 10px;
+  border-radius: 3px;
   cursor: pointer;
-  font-size: 12px;
 }
 
 .upgrade button:disabled {
-  background-color: #ddd;
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 
 .can-afford {
-  border-color: #4caf50;
+  border-color: #36d413;
 }

@@ -1,0 +1,43 @@
+.accordion {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.accordion-toggle {
+  width: 100%;
+  background-color: #f1f1f1;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-toggle:hover {
+  background-color: #ddd;
+}
+
+.accordion-content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}

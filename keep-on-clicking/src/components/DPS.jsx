@@ -1,36 +1,22 @@
-import { useState, useEffect, useCallback } from "react";
+import "react";
 import PropTypes from "prop-types";
 import "./DPS.css";
 
-const DPS = ({ dps, onScoreUpdate }) => {
-  const [totalDamage, setTotalDamage] = useState(0);
-
-  const updateDamage = useCallback(() => {
-    if (dps > 0) {
-      setTotalDamage((prevTotal) => {
-        const newTotal = prevTotal + dps;
-        onScoreUpdate(dps);
-        return newTotal;
-      });
-    }
-  }, [dps, onScoreUpdate]);
-
-  useEffect(() => {
-    const interval = setInterval(updateDamage, 1000);
-    return () => clearInterval(interval);
-  }, [updateDamage]);
-
+const DPS = ({ dps, clickCount, totalDamage }) => {
   return (
-    <div className="dps">
-      <h2>Damage per Second: {dps.toFixed(2)}</h2>
-      <h2>Total Damage: {totalDamage.toFixed(2)}</h2>
+    <div className="dps-container">
+      <h2>Stats</h2>
+      <div className="stat-item">Clicks: {clickCount}</div>
+      <div className="stat-item">Damage per Second: {dps.toFixed(2)}</div>
+      <div className="stat-item">Total Damage: {totalDamage.toFixed(2)}</div>
     </div>
   );
 };
 
 DPS.propTypes = {
   dps: PropTypes.number.isRequired,
-  onScoreUpdate: PropTypes.func.isRequired,
+  clickCount: PropTypes.number.isRequired,
+  totalDamage: PropTypes.number.isRequired,
 };
 
 export default DPS;

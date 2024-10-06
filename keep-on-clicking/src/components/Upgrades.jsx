@@ -1,44 +1,17 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import Upgrade from "./Upgrade";
 import upgradesData from "../Upgrades.json";
 import "./Upgrades.css";
 
-const Upgrades = ({ score, onScoreUpdate, setDps }) => {
-  const [upgrades, setUpgrades] = useState(
-    upgradesData.map((upgrade) => ({ ...upgrade, count: 0 }))
-  );
+const Upgrades = ({ totalDamage, onUpgrade }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const calculateTotalDps = useCallback(() => {
-    return upgrades.reduce(
-      (total, upgrade) => total + upgrade.increase * upgrade.count,
-      0
-    );
-  }, [upgrades]);
-
-  useEffect(() => {
-    setDps(calculateTotalDps());
-  }, [upgrades, setDps, calculateTotalDps]);
-
-  const handleUpgrade = useCallback(
-    (upgradeId) => {
-      setUpgrades((prevUpgrades) =>
-        prevUpgrades.map((upgrade) =>
-          upgrade.id === upgradeId
-            ? {
-                ...upgrade,
-                count: upgrade.count + 1,
-                cost: Math.ceil(upgrade.cost * 1.15),
-              }
-            : upgrade
-        )
-      );
-      const upgradeCost = upgrades.find((u) => u.id === upgradeId).cost;
-      onScoreUpdate(score - upgradeCost);
-    },
-    [score, onScoreUpdate, upgrades]
-  );
+  const handleUpgrade = (upgrade) => {
+    if (totalDamage >= upgrade.cost) {
+      onUpgrade(upgrade.increase, upgrade.cost);
+    }
+  };
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -51,12 +24,12 @@ const Upgrades = ({ score, onScoreUpdate, setDps }) => {
       </button>
       {isExpanded && (
         <div className="upgrades-grid">
-          {upgrades.map((upgrade) => (
+          {upgradesData.map((upgrade) => (
             <Upgrade
               key={upgrade.id}
               upgrade={upgrade}
-              onUpgrade={handleUpgrade}
-              canAfford={score >= upgrade.cost}
+              onUpgrade={() => handleUpgrade(upgrade)}
+              canAfford={totalDamage >= upgrade.cost}
             />
           ))}
         </div>
@@ -66,9 +39,8 @@ const Upgrades = ({ score, onScoreUpdate, setDps }) => {
 };
 
 Upgrades.propTypes = {
-  score: PropTypes.number.isRequired,
-  onScoreUpdate: PropTypes.func.isRequired,
-  setDps: PropTypes.func.isRequired,
+  totalDamage: PropTypes.number.isRequired,
+  onUpgrade: PropTypes.func.isRequired,
 };
 
 export default Upgrades;

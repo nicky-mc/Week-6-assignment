@@ -1,23 +1,23 @@
+/* src/components/NameEntry.css */
 .name-entry {
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.name-entry input {
-  padding: 5px 10px;
+.name-input {
+  width: 300px;
+  padding: 10px;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
-.name-entry button {
-  padding: 5px 10px;
+.save-button {
+  padding: 10px 20px;
   font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
   cursor: pointer;
+  background-color: chartreuse;
+  color: gray;
+  text-shadow: 1px 1px 1px black;
 }
