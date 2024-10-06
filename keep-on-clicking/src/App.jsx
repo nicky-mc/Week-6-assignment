@@ -65,7 +65,7 @@ const App = () => {
     <div className={`App ${isDarkMode ? "dark-mode" : "light-mode"}`}>
       <AnimatedBackground />
       <BackgroundMusic
-        src="/assets/audio/CHIPTUNE_Minstrel_Dance(chaosic.com).mp3"
+        src="/assets/audio/CHIPTUNE_Minstrel_Dance(chosic.com).mp3"
         isPlaying={isMusicPlaying}  // Pass the state
       />
       <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
