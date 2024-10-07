@@ -8,11 +8,6 @@ Create the Game Components
 Integrate state management to handle the game state.
 Add styles and additional features like upgrades or achievements
 
-
-
-
-
-
 Week 6 Assignment: Build a Cookie Clicker using React
 Overview
 It's time for some more cookies. The Cookie Clicker game from previous weeks as a React application. It's useful to build the same application in the new paradigm so you can draw direct comparisons and see how the new approach is different from the old one.
@@ -53,10 +48,6 @@ Requirements
 🎯 Use the .map() function to render lists of items in the application dynamically.✅
 🎯 Use logic to manage the purchase and application of upgrade items within the game.✅
 
-
-
-
-
 Stretch User Stories
 🐿️ As a user, I want the application to save and retrieve my game data so that my progress is preserved even when I close and reopen the game.✅
 🐿️ As a developer, I want the application to use an API to retrieve upgrade information so that users can access current upgrade details and seamlessly integrate them into their game play.✅
@@ -69,32 +60,32 @@ Reflection
 Please also provide an assignment reflection in your project README.md file.
 
 Required
-🎯 What requirements did you achieve?  i believe i mananged to hit all requirements
-and stretch goals. 
+🎯 What requirements did you achieve? i believe i mananged to hit all requirements
+and stretch goals.
 🎯 Were there any requirements or goals that you were unable to achieve? none of thw stretch or
 required ones. i had a hard time implementing the background music
-🎯 If so, what was it that you found difficult about these tasks? chrome by default prevents autosy as does many browsers ive achieved this 
+🎯 If so, what was it that you found difficult about these tasks? chrome by default prevents autosy as does many browsers ive achieved this
 before previously but couldnt figure it out this time
 Optional
 🏹 Feel free to add any other reflections you would like to share about your submission, for example:
 
 Requesting feedback about a specific part of your submission.
 
-id like to knkw wjat i could have done to implement the music bwtter 
+id like to knkw wjat i could have done to implement the music bwtter
 What useful external sources helped you complete the assignment (e.g YouTube tutorials)?
-BroCode codecademy,  mimo, w3 schools, DEV, GeeksforGeeks, various YouTube videos.
+BroCode codecademy, mimo, w3 schools, DEV, GeeksforGeeks, various YouTube videos.
 What errors or bugs did you encounter while completing your assignment? How did you solve them?
-i managed to come across a few but it was mostly to do with my extensions ftom my compnets  not correctly laid out
+i managed to come across a few but it was mostly to do with my extensions ftom my compnets not correctly laid out
 as well as habign my index in src when it needed to en in root.
 
 What went really well and what could have gone better?
-researchjng the components went really well. my biggest issue was 
+researchjng the components went really well. my biggest issue was
 my initial file structure once i fixed this it fell into place. i experiemnted with a
-few components one called accordian stands out. it was to attempt to make the score board and name entry easier to 
-see on mobile. 
-if i had more time I'd investigate thjs snd the music and implement their use. i also 
-woyld add noise to the button clicks. 
+few components one called accordian stands out. it was to attempt to make the score board and name entry easier to
+see on mobile.
+if i had more time I'd investigate thjs snd the music and implement their use. i also
+woyld add noise to the button clicks.
 
 it was fun to implement my design witb React amd i look forward to
-whst comes next. 
-https://week-6-assignment-rho.vercel.app/
+whst comes next.
+[Week 6 Assignment Deployment](https://week-6-assignment-rho.vercel.app/)
