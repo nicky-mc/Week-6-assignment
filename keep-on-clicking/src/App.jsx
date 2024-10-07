@@ -10,10 +10,28 @@ import DPS from "./components/DPS";
 import "./App.css";
 
 const App = () => {
-  const [score, setScore] = useState({ clicks: 0, dps: 0, totalDamage: 0 });
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [scores, setScores] = useState([]);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false);  // Initialize to false
+  const [score, setScore] = useState(() => {
+    const savedScore = localStorage.getItem("gameScore");
+    return savedScore
+      ? JSON.parse(savedScore)
+      : { clicks: 0, dps: 0, totalDamage: 0 };
+  });
+
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  const [scores, setScores] = useState(() => {
+    const savedScores = localStorage.getItem("savedScores");
+    return savedScores ? JSON.parse(savedScores) : [];
+  });
+
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
 
   const handleClick = () => {
     setScore((prevScore) => ({
@@ -36,7 +54,8 @@ const App = () => {
   };
 
   const handleSaveName = (name) => {
-    setScores((prevScores) => [...prevScores, { name, ...score }]);
+    const newScore = { name, ...score, date: new Date().toISOString() };
+    setScores((prevScores) => [...prevScores, newScore]);
   };
 
   const handleReset = () => {
@@ -46,10 +65,6 @@ const App = () => {
   const toggleMusic = () => {
     setIsMusicPlaying(!isMusicPlaying);
   };
-
-  useEffect(() => {
-    document.body.className = isDarkMode ? "dark-mode" : "light-mode";
-  }, [isDarkMode]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,7 +81,7 @@ const App = () => {
       <AnimatedBackground />
       <BackgroundMusic
         src="/assets/audio/CHIPTUNE_Minstrel_Dance(chosic.com).mp3"
-        isPlaying={isMusicPlaying}  // Pass the state
+        isPlaying={isMusicPlaying}
       />
       <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <div className="reset-button-container">
